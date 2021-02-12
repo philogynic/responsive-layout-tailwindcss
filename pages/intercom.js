@@ -66,7 +66,9 @@ export default function Intercom() {
             })}
           </div>
         </div>
+
         <div className="w-3/5 border-l border-r border-gray-300">center</div>
+
         <div className="w-1/5 bg-gray-200 flex flex-col overflow-y-auto">
           <div className="h-64 flex-none bg-gray-300">top</div>
           <div className="p-4 flex flex-col space-y-2">
