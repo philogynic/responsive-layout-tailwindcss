@@ -22,3 +22,10 @@ a {
   backdrop-filter: saturate(180%) blur(20px);
   transition: background-color 0.1 ease-in-out;
 }
+
+.inset-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
