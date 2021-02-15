@@ -2,9 +2,16 @@ import { useState } from "react";
 
 export default function Billing() {
   const [showBillingForm, setShowBillingForm] = useState(true);
+  const [notificationShown, setNotificationShown] = useState(false);
 
   const billingFormToggle = () => {
     showBillingForm ? setShowBillingForm(false) : setShowBillingForm(true);
+  };
+
+  const notificationToggle = () => {
+    notificationShown
+      ? setNotificationShown(false)
+      : setNotificationShown(true);
   };
 
   return (
@@ -12,9 +19,101 @@ export default function Billing() {
       <div className="absolute h-32 w-full top-0 z-0 bg-gray-800"></div>
       <header className="bg-gray-800 z-10">
         <nav className="container mx-auto px-2 text-gray-100">
-          <div className="flex justify-between items-center">
-            <div>nav 1 left</div>
-            <div>nav 1 right</div>
+          <div className="py-4 flex justify-between items-center">
+            <div className="text-xl font-semibold">fucking logo</div>
+            <div className="flex space-x-2">
+              <button
+                onClick={notificationToggle}
+                className=" relative bg-green-200 h-8 w-8 rounded-full text-black text-left block"
+              >
+                <div
+                  className={
+                    "z-10 w-96 h-96 shadow-lg absolute flex flex-col bg-gray-100 top-0 right-0 mt-10 overflow-hidden rounded-lg " +
+                    (notificationShown ? "hidden" : "")
+                  }
+                >
+                  <div className="overflow-y-auto">
+                    <div className="p-4 flex space-x-1">
+                      <div className="mt-1 mr-2 bg-gray-500 h-4 w-4 flex-none rounded-full"></div>
+                      <div className="">
+                        <div className="flex space-x-1">
+                          <h3 className="text-md font-semibold text-gray-700">
+                            Tell us your experience with Netlify Functions!
+                          </h3>
+                          <p className="flex-none text-sm">11 days ago</p>
+                        </div>
+                        <p className="text-sm pt-2">
+                          Did you use Netlify Functions in the past but have now
+                          stopped using them? We'd like to learn more! Please
+                          take this short survey
+                        </p>
+                        <div className="text-xl underline text-green-700">
+                          Learn more
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 flex space-x-1">
+                      <div className="mt-1 mr-2 bg-gray-500 h-4 w-4 flex-none rounded-full"></div>
+                      <div className="">
+                        <div className="flex space-x-1">
+                          <h3 className="text-md font-semibold text-gray-700">
+                            Announcing one click install Next.js Built Plugin
+                          </h3>
+                          <p className="flex-none text-sm">2 months ago</p>
+                        </div>
+                        <p className="text-sm pt-2">Enjoy everything</p>
+                        <div className="text-xl underline text-green-700">
+                          Learn more
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 flex space-x-1">
+                      <div className="mt-1 mr-2 bg-gray-500 h-4 w-4 flex-none rounded-full"></div>
+                      <div className="">
+                        <div className="flex space-x-1">
+                          <h3 className="text-md font-semibold text-gray-700">
+                            Tell us your experience with Netlify Functions!
+                          </h3>
+                          <p className="flex-none text-sm">11 days ago</p>
+                        </div>
+                        <p className="text-sm pt-2">
+                          Did you use Netlify Functions in the past but have now
+                          stopped using them? We'd like to learn more! Please
+                          take this short survey
+                        </p>
+                        <div className="text-xl underline text-green-700">
+                          Learn more
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 flex space-x-1">
+                      <div className="mt-1 mr-2 bg-gray-500 h-4 w-4 flex-none rounded-full"></div>
+                      <div className="">
+                        <div className="flex space-x-1">
+                          <h3 className="text-md font-semibold text-gray-700">
+                            Tell us your experience with Netlify Functions!
+                          </h3>
+                          <p className="flex-none text-sm">11 days ago</p>
+                        </div>
+                        <p className="text-sm pt-2">
+                          Did you use Netlify Functions in the past but have now
+                          stopped using them? We'd like to learn more! Please
+                          take this short survey
+                        </p>
+                        <div className="text-xl underline text-green-700">
+                          Learn more
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </button>
+              <button
+                onClick={notificationToggle}
+                className=" relative bg-green-200 h-8 w-8 rounded-full text-black text-left"
+              ></button>
+              <div className="bg-gray-200 h-8 w-8 rounded-full"></div>
+            </div>
           </div>
           <div>
             <div className="flex flex-wrap text-gray-400">
@@ -31,9 +130,11 @@ export default function Billing() {
           </div>
         </nav>
       </header>
-      <main className="flex-1 z-10 mt-4">
+      <main className="flex-1 mt-4">
         <div className="container flex flex-col mx-auto px-2">
-          <div className="h-32 max-w-lg bg-gray-100 rounded-lg">first card</div>
+          <div className="h-32 max-w-lg bg-gray-100 rounded-lg z-0">
+            first card
+          </div>
           <div className="flex space-x-2">
             <div className="w-1/4 ">
               <div className="flex flex-col sticky top-0">
